@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Valentine ❤️</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #fcefee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .card {
+    background: white;
+    width: 90%;
+    max-width: 420px;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  }
+
+  h2 { color: #e75480; }
+
+  p { color: #444; }
+
+  button {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 20px;
+    background: #e75480;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+
+  .hidden { display: none; }
+
+  img {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 15px;
+  }
+
+  input {
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- PAGE 1 -->
+  <div id="p1">
+    <h2>Dhanush ❤️</h2>
+    <p>Will you be my Valentine today and forever?</p>
+    <button onclick="next(1)">Yes 💖</button>
+    <button onmouseover="this.style.marginLeft='80px'">No 🙈</button>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div id="p2" class="hidden">
+    <h2>Yaaahhh! 🥰</h2>
+    <p>I want to show you some moments  
+    that my heart keeps safe ❤️</p>
+    <button onclick="next(2)">See the moments 📸</button>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div id="p3" class="hidden">
+    <h2>Sweet Heart 🔐</h2>
+    <p>Some memories need a little unlock 💕</p>
+    <button onclick="next(3)">Unlock 🔓</button>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div id="p4" class="hidden">
+    <img src="ND1.jpeg">
+    <p>First pongal with you, first of many memories- my favorite tradition is celebrating everything with you 💍</p>
+    <button onclick="next(4)">Next 💕</button>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div id="p5" class="hidden">
+    <img src="ND2.jpeg">
+    <p>This is our favorite pic of all , because it captures the moment our hearts felt closest❤️</p>
+    <button onclick="next(5)">One last thing 💌</button>
+  </div>
+
+  <!-- PAGE 6 -->
+  <div id="p6" class="hidden">
+    <h2>Hey handsome ❤️</h2>
+    <p>Type <b>I love you </b>  
+    to unlock my final surprise 💖</p>
+    <input id="loveInput" placeholder="Type here...">
+    <br>
+    <button onclick="checkLove()">Submit 💝</button>
+  </div>
+
+  <!-- FINAL -->
+  <div id="p7" class="hidden">
+    <h2>I love you </h2>
+    <p>You are my favorite story,  
+    my safest place, my always, my everything 💕</p>
+  </div>
+
+</div>
+
+<script>
+  function next(n) {
+    document.getElementById("p"+n).classList.add("hidden");
+    document.getElementById("p"+(n+1)).classList.remove("hidden");
+  }
+
+  function checkLove() {
+    const text = document.getElementById("loveInput").value.toLowerCase();
+    if (text === "i love you") {
+      document.getElementById("p6").classList.add("hidden");
+      document.getElementById("p7").classList.remove("hidden");
+    } else {
+      alert("Type it with love ❤️");
+    }
+  }
+</script>
+
+</body>
+</html>
